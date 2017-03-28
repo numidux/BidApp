@@ -1,0 +1,26 @@
+﻿@model BidApp.Models.ProductsViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<div>
+    <h4>List of products</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+    <ul>
+            @foreach (var item in @Model.Products)
+            {
+                <li>
+                    @Html.Raw(item.Name)
+                </li>
+            }
+        </ul>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
